@@ -24,9 +24,7 @@ https://dribbble.com/shots/11914210/attachments/3540273?mode=media
 https://rapidapi.com
 
 # Screenshot Android
-![alt text](1.jpg)
-![alt text](2.jpg)
-![alt text](3.jpg)
+![alt text](1.png)
 
 ## 📝 Notes
 
