@@ -1,8 +1,17 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, ViewStyle, TextStyle } from "react-native";
 
 import { COLORS, FONT, SIZES } from "../../../constants";
 
-const styles = StyleSheet.create({
+type Style = {
+  container: ViewStyle;
+  title: TextStyle;
+  pointsContainer: ViewStyle;
+  pointWrapper: ViewStyle;
+  pointDot: ViewStyle;
+  pointText: TextStyle;
+};
+
+const styles = StyleSheet.create<Style>({
   container: {
     marginTop: SIZES.large,
     backgroundColor: "#FFF",
