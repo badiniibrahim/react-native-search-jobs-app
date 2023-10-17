@@ -1,9 +1,21 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, ViewStyle, TextStyle, ImageStyle } from "react-native";
 
 import { COLORS, FONT, SHADOWS, SIZES } from "../../../../constants";
 
-const styles = StyleSheet.create({
-  container: (selectedJob, item) => ({
+type Style = {
+  container: any;
+  logoContainer: any;
+  logoImage: ImageStyle;
+  companyName: TextStyle;
+  infoContainer: TextStyle;
+  infoWrapper: TextStyle;
+  jobName: any;
+  publisher: any;
+  location: TextStyle;
+};
+
+const styles = StyleSheet.create<Style>({
+  container: (selectedJob: any, item: { job_id: any }) => ({
     width: 250,
     padding: SIZES.xLarge,
     backgroundColor: selectedJob === item.job_id ? COLORS.primary : "#FFF",
@@ -12,7 +24,7 @@ const styles = StyleSheet.create({
     ...SHADOWS.medium,
     shadowColor: COLORS.white,
   }),
-  logoContainer: (selectedJob, item) => ({
+  logoContainer: (selectedJob: any, item: { job_id: any }) => ({
     width: 50,
     height: 50,
     backgroundColor: selectedJob === item.job_id ? "#FFF" : COLORS.white,
@@ -33,7 +45,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     marginTop: SIZES.large,
   },
-  jobName: (selectedJob, item) => ({
+  jobName: (selectedJob: any, item: { job_id: any }) => ({
     fontSize: SIZES.large,
     fontFamily: FONT.medium,
     color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
@@ -44,7 +56,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
   },
-  publisher: (selectedJob) => ({
+  publisher: (selectedJob: any, item: { job_id: any }) => ({
     fontSize: SIZES.medium - 2,
     fontFamily: FONT.bold,
     color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,

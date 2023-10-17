@@ -1,4 +1,4 @@
-import { StyleSheet, ViewStyle, ImageStyle } from "react-native";
+import { StyleSheet, ViewStyle } from "react-native";
 import { SIZES } from "../../../constants";
 
 type Style = {
