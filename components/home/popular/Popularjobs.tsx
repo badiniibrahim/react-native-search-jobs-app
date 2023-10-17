@@ -14,10 +14,18 @@ import { COLORS, SIZES } from "../../../constants";
 import useFetch from "../../../hooks/useFetch";
 
 const Popularjobs = () => {
+  const router = useRouter();
+  const [selectedJob, setSelectedJob] = useState();
+
   const { data, isLoading, error } = useFetch("search", {
     query: "React developer",
     num_pages: 1,
   });
+
+  const handleCardPres = (item: any) => {
+    router.push(`/job-details/${item.job_id}`);
+    setSelectedJob(item.job_id);
+  };
 
   return (
     <View style={styles.container}>
@@ -38,8 +46,8 @@ const Popularjobs = () => {
             renderItem={({ item }) => (
               <PopularJobCard
                 item={item}
-                selectedJob={item}
-                handleCardPres={() => {}}
+                selectedJob={selectedJob}
+                handleCardPres={() => handleCardPres(item)}
               />
             )}
             keyExtractor={(item: any) => item}

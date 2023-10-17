@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import {
   View,
   Text,
@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   FlatList,
+  TextInputChangeEventData,
 } from "react-native";
 import { useRouter } from "expo-router";
 
@@ -13,7 +14,17 @@ import styles from "./welcome.style";
 import { SIZES, icons } from "../../../constants";
 const jobTypes = ["Product", "Design", "Developpement"];
 
-const Welcome = () => {
+type WelcomeProps = {
+  searchTerm: string;
+  setSearchTerm(value: any): void;
+  handleOnclick: () => void;
+};
+
+const Welcome: FC<WelcomeProps> = ({
+  searchTerm,
+  setSearchTerm,
+  handleOnclick,
+}) => {
   const router = useRouter();
   const [activeJobType, setActiveJobType] = useState("Product");
 
@@ -27,12 +38,12 @@ const Welcome = () => {
         <View style={styles.searchWrapper}>
           <TextInput
             style={styles.searchInput}
-            value=""
-            onChange={() => {}}
+            value={searchTerm}
+            onChangeText={(text) => setSearchTerm(text)}
             placeholder="What are you looking for"
           />
         </View>
-        <TouchableOpacity style={styles.searchBtn} onPress={() => {}}>
+        <TouchableOpacity style={styles.searchBtn} onPress={handleOnclick}>
           <Image
             source={icons.search}
             resizeMode="contain"
