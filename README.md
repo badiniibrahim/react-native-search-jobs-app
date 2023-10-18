@@ -1,5 +1,5 @@
 # React native search jobs app
-This is a repository for a react native app. 
+This is a repository for a react native application for searching and displaying the task list with RapidApi.
 
 <h1 align="center">
   SAWADOGO Badini Ibrahim
@@ -16,6 +16,16 @@ This is a repository for a react native app.
 ![Github Repo Size](https://img.shields.io/github/repo-size/badiniibrahim/react-native-search-jobs-app)
 ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 <img src="https://img.shields.io/github/license/Yuberley/ChatGPT-App-React-Native-TypeScript?style&color=5D6D7E" alt="GitHub license" />
+
+## Technologies
+- React native 
+- Typescript
+- Expo
+- Create reusable components
+- RapidApi
+  
+## 🔐 Setup .env file
+RAPID_API_KEY
 
 ## Design
 https://dribbble.com/shots/11914210/attachments/3540273?mode=media
